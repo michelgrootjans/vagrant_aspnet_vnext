@@ -17,6 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:5000" will access port 5000 on the guest machine.
   config.vm.network "forwarded_port", guest: 5000, host: 5000
 
-  config.vm.provision "shell", path: "provision.sh"
+  config.vm.provision "shell", path: "provision_mono.sh"
+  config.vm.provision "shell", path: "provision_libuv.sh"
+  config.vm.provision "shell", path: "provision_dnvm.sh"
 
 end
